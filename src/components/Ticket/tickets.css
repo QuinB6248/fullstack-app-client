@@ -1,5 +1,18 @@
+.ticketListHeaderHome{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:360px;
+}
+
+.headerHome{
+  width: 100%
+}
+
 .ticketsListContainer{
   width:350px;
+ 
 }
 .containerTicketsSpace {
   display: flex;
@@ -9,55 +22,64 @@
 }
 
 .headerTicketsSpace{
-  display: flex;
-  justify-content: center;
-  background-color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600; 
   margin-top:20px;
   margin-bottom:30px;
   color: white;
   width:100%;
-  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+.headerTicket{
+  font-family: 'Nosifer', cursive;
+  text-align: center;
+}
+
+.headerTicketName{
+  text-align: center;
+
 }
 .ticketsFormSpace  {
  width: 100%;
 }
 
 .ticketContainer{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .ticketImageSpace{
- display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
   overflow:hidden;
   border-radius: 2px;
   margin:5px;
-  width: 150px;
   height: 150px;
   box-shadow:  0px 0px 3px 0px rgba(0, 0, 0, 0.4);
 }
 
 .ticketImage{
-  max-height:150px;
-  width: 150px;
+  height:150px;
 }
 
 .ticketInfoSpace {
+  margin-left: 30px;
+  color: white!important;
   display: flex;
   flex-direction: column;
 }
 
 .ticketDescriptionSpace{
+
   margin:5px;
-  box-shadow:  0px 0px 3px 0px rgba(0, 0, 0, 0.4);
   height: 90px;
 }
 
 .ticketDescriptionSpace > p {
-  font-family: 'Roboto Slab', serif;
+  color: white!important;
+  font-family: 'Lato', sans-serif;
   font-size: 15px;
   color: black;
   margin: 7px;
@@ -73,7 +95,8 @@
 .ticketPrice{
   display: flex;
   align-items: center;
-  font-family: 'Roboto Slab', serif;
+  color: white!important;
+  font-family: 'Lato', sans-serif;
   font-size: 15px;
   color: black;
   margin-left: 7px;
@@ -105,12 +128,10 @@
 }
 
 .riskfield{
-  margin:auto;
-  margin-right: 7px
+  margin:auto 10px;
 }
 
 .risk{
-  font-family: 'Roboto Slab', serif;
   margin: auto;
   text-align: center;
   color: white;
@@ -118,9 +139,22 @@
   transform: translateY(50%);
 }
 
-
-@media (min-width: 500px) {
+@media (min-width: 640px) {
   .ticketsListContainer{
     width: 500px;
   }
+  
+}
+@media (min-width: 640px) {
+  .ticketListHeaderHome{
+    min-width: 600px;
+  }
+  
+}
+@media (min-width: 940px) {
+  .ticketListHeaderHome{
+    min-width: 900px;
+    max-width: 1140px;
+  }
+  
 }

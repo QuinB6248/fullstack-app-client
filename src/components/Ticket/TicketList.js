@@ -7,7 +7,7 @@ export default function TicketsList(props) {
     return 'loading...'
     }
 
-  const { tickets, eventName, onAdd, onChange, onSubmit, values }  = props
+  const { tickets, eventName, onAdd, onChange, onSubmit, removeForm, values }  = props
   const {editMode} = values
   const ticketForm =  <TicketForm onChange={onChange} onSubmit={onSubmit} values={values}/>
   const form = editMode && ticketForm
@@ -19,6 +19,7 @@ export default function TicketsList(props) {
       </div>
       <div>
         {form}
+        {editMode === true? <div onClick={removeForm} className= 'removeForm' >X Close form</div>: <div></div>}
       </div>
     </div>  
 
@@ -40,7 +41,7 @@ export default function TicketsList(props) {
                 </div>
                 <div className='ticketPriceSpace'>
                   <div className='ticketPrice'>
-                    <h3>ticketprice: €{ticket.price}</h3>
+                    ticketprice: €{ticket.price}
                   </div>
                   <div className='riskfield'>
                     { ticket.risk < 15 ? 
@@ -57,19 +58,21 @@ export default function TicketsList(props) {
         </a>)
   
   return (
-    <div className='ticketsListContainer'>
-      <div > 
-        <a  href={`/events`} className='buttonField allEventsLink'>events</a>
+    <div className='ticketListHeaderHome'>
+      <div className='headerHome'> 
+        <a  href={`/events`} className='buttonField2 allEventsLink'><span className="material-icons">castle</span></a>
       </div>
+      <div className='ticketsListContainer'>
+      
       <div>
         <div className='headerTicketsSpace'>
-         
-            <h3> {eventName} TICKETS</h3>
-          
+          <div className='headerTicket'>TICKETS</div>
+          <div className='headerTicketName'>{eventName} </div>
         </div>
         {ticketDetails}
         {listOfTickets}
       </div>
+    </div>
     </div>
   )
 }
